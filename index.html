@@ -2,15 +2,15 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Екскурсії Україною</title>
-    <meta name="author" content="Yelizarova Sofiia">
+    <title>Екскурсії Україною | Головна</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body bgcolor="#e6f2ff" link="#1e4f73" vlink="#2c6e91" alink="#ff6600">
 
 <header>
-    <h1>Екскурсії Україною!</h1>
-    <p>Відкрий для себе найкрасивіші міста країни</p>
+    <h1>Екскурсії Україною</h1>
+    <p><i>Автор: Єлізарова Софія</i></p>
 </header>
 
 <nav>
@@ -21,18 +21,154 @@
 </nav>
 
 <main>
+
     <div class="card">
-        <h2>Про сайт</h2>
+        <h2 id="about">Про проєкт</h2>
+
         <p>
-            Цей сайт присвячений екскурсіям найвідомішими містами України.
-            Тут ви знайдете коротку інформацію про Київ, Львів та Одесу —
-            міста з унікальною історією, культурою та архітектурою.
+            <font size="4" color="#1e4f73">
+                Цей сайт присвячений <b>екскурсіям Україною</b>. Ми пропонуємо захопливі
+                подорожі історичними та культурними містами.
+            </font>
         </p>
+
+        <p align="justify">
+            Україна має <i>багатовікову історію</i>, багату архітектуру та неймовірні краєвиди.
+            Детальніше про країну можна дізнатися на
+            <a href="https://uk.wikipedia.org/wiki/Україна" target="_blank">
+                офіційній сторінці Вікіпедії
+            </a>.
+        </p>
+
+        <a href="#cities">Перейти до списку міст</a>
+
+    </div>
+
+    <div class="card">
+        <h2 id="cities">Популярні міста</h2>
+
+        <ul type="square">
+            <li>Київ</li>
+            <li>Львів</li>
+            <li>Одеса</li>
+        </ul>
+
+        <h3>Різновиди екскурсій</h3>
+        <ol type="A">
+            <li>Історичні екскурсії</li>
+            <li>Культурні тури</li>
+            <li>Морські прогулянки</li>
+        </ol>
+
+        <dl>
+            <dt><b>Екскурсія</b></dt>
+            <dd>Організована подорож з гідом.</dd>
+        </dl>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Таблиця екскурсій</h2>
+
+        <table border="1" cellpadding="10" cellspacing="5" width="100%">
+            <caption><b>Наші тури</b></caption>
+
+            <tr bgcolor="#1e4f73" align="center">
+                <th>Київ</th>
+                <th>Львів</th>
+                <th>Одеса</th>
+                <th>Деталі</th>
+            </tr>
+
+            <tr align="center">
+                <td>
+                    <a href="img/kyiv.jpg" target="_blank">
+                        <img src="img/kyiv.jpg" width="80">
+                    </a>
+                </td>
+                <td>
+                    <a href="img/lviv.jpg" target="_blank">
+                        <img src="img/lviv.jpg" width="80">
+                    </a>
+                </td>
+                <td>
+                    <a href="img/odesa.jpg" target="_blank">
+                        <img src="img/odesa.jpg" width="80">
+                    </a>
+                </td>
+                <td>Фото міст</td>
+            </tr>
+
+            <tr align="center">
+                <td><a href="kyiv.html">Перейти</a></td>
+                <td><a href="lviv.html">Перейти</a></td>
+                <td><a href="odesa.html">Перейти</a></td>
+                <td>Посилання</td>
+            </tr>
+
+            <tr>
+                <td>Столиця України</td>
+                <td>Культурна столиця</td>
+                <td>Морська перлина</td>
+                <td>Опис</td>
+            </tr>
+        </table>
+
+
+    </div>
+
+    <div class="card">
+
+        <h2>Складна таблиця</h2>
+
+        <table border="1" cellpadding="15" cellspacing="10" width="100%">
+            <colgroup>
+                <col span="2" style="background-color:#f2f9ff">
+                <col style="background-color:#ffffff">
+            </colgroup>
+
+            <tr align="center">
+                <th colspan="3" bgcolor="#2c6e91">Розклад турів</th>
+            </tr>
+
+            <tr align="left">
+                <td rowspan="2">Київ</td>
+                <td>Пішохідна екскурсія</td>
+                <td align="right">09:00</td>
+            </tr>
+
+            <tr align="left">
+                <td>Автобусний тур</td>
+                <td align="right">14:00</td>
+            </tr>
+
+            <tr align="center">
+                <td>Львів</td>
+                <td colspan="2">Щоденно 10:00</td>
+            </tr>
+
+            <tr align="center">
+                <td>Одеса</td>
+                <td colspan="2">Щоденно 12:00</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="card">
+        <h2>Офіційне джерело інформації про Україну</h2>
+        <iframe
+                src="https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0"
+                width="100%"
+                height="400">
+        </iframe>
     </div>
 </main>
 
 <div class="footer">
-    Автор: Єлізарова Софія
+    <p>© 2026 Екскурсії Україною</p>
 </div>
 
 </body>

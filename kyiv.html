@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Екскурсія Києвом</title>
-    <meta name="author" content="Yelizarova Sofiia">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body bgcolor="#e6f2ff" link="#1e4f73" vlink="#2c6e91" alink="#ff6600" background="">
 
 <header>
     <h1>Екскурсія Києвом</h1>
@@ -19,33 +19,111 @@
 </nav>
 
 <main>
-    <div class="card">
-        <img src="img/kyiv.jpg" alt="Київ">
 
-        <p>
-            Київ — столиця України та одне з найстаріших міст Європи.
-            Його історія продовжується вже понад 1500 років.
+    <div class="card" id="top">
+        <h2>Про місто</h2>
+
+        <p align="justify">
+            <font size="4" color="#1e4f73" face="Arial">
+                <b>Київ</b> — столиця України та одне з найдавніших міст Європи. Це культурний,
+                політичний і духовний центр країни з великою кількістю історичних пам’яток.
+            </font>
+        </p>
+
+        <p align="justify">
+            Місто відоме <i>золотими куполами</i>, старовинними вулицями та неймовірними
+            краєвидами на Дніпро. Під час екскурсії туристи відвідують головні площі,
+            музеї та архітектурні пам’ятки.
         </p>
 
         <p>
-            У місті розташовані визначні пам’ятки:
+            Перейти до <a href="#places">визначних місць</a> цієї сторінки.
         </p>
 
-        <ul>
-            <li>Софійський собор</li>
-            <li>Києво-Печерська лавра</li>
-            <li>Майдан Незалежності</li>
-            <li>Андріївський узвіз</li>
-        </ul>
+        <p>
+            Перейти до списку міст на іншій сторінці:
+            <a href="index.html#cities">Головна сторінка → міста</a>
+        </p>
 
         <p>
-            Київ є культурним, освітнім та туристичним центром України.
+            Детальніше про Київ:
+            <a href="https://uk.wikipedia.org/wiki/Київ" target="_blank">
+                сторінка в інтернеті
+            </a>
         </p>
     </div>
+
+    <div class="card" id="places">
+        <h2>Визначні місця</h2>
+
+        <ul type="disc">
+            <li>Хрещатик</li>
+            <li>Андріївський узвіз</li>
+            <li>Софійська площа</li>
+        </ul>
+
+        <ol type="I">
+            <li>Оглядова екскурсія</li>
+            <li>Музейний тур</li>
+            <li>Вечірня прогулянка</li>
+        </ol>
+
+        <dl>
+            <dt><b>Гід</b></dt>
+            <dd>Людина, яка проводить екскурсію та розповідає історію міста.</dd>
+        </dl>
+
+        <a href="img/kyiv.jpg" target="_blank">
+            <img src="img/kyiv.jpg" width="150">
+        </a>
+
+        <p><a href="#top">Повернутися на початок сторінки</a></p>
+    </div>
+
+    <div class="card">
+        <h2>Таблиця екскурсій Києвом</h2>
+
+        <table border="1" cellpadding="15" cellspacing="10" width="100%">
+            <colgroup>
+                <col span="2" style="background-color:#f2f9ff">
+                <col>
+            </colgroup>
+
+            <tr align="center">
+                <th colspan="3" bgcolor="#2c6e91">Розклад</th>
+            </tr>
+
+            <tr align="left">
+                <td rowspan="2">Київ</td>
+                <td>Ранкова</td>
+                <td align="right">09:00</td>
+            </tr>
+
+            <tr>
+                <td>Вечірня</td>
+                <td align="right">18:00</td>
+            </tr>
+
+            <tr align="center">
+                <td>Центр</td>
+                <td colspan="2">Щодня</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>Офіційне джерело інформації про Київ</h2>
+        <iframe
+                src="https://uk.wikipedia.org/wiki/Київ"
+                width="100%"
+                height="400">
+        </iframe>
+    </div>
+
 </main>
 
 <div class="footer">
-    Автор: Єлізарова Софія
+    <p>© 2026 Екскурсії Україною</p>
 </div>
 
 </body>

@@ -2,14 +2,14 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Екскурсія по Львову</title>
-    <meta name="author" content="Yelizarova Sofiia">
+    <title>Екскурсія Львовом</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body bgcolor="#e6f2ff" link="#1e4f73" vlink="#2c6e91" alink="#ff6600">
 
 <header>
-    <h1>Екскурсія по Львову</h1>
+    <h1>Екскурсія Львовом</h1>
 </header>
 
 <nav>
@@ -19,33 +19,88 @@
 </nav>
 
 <main>
-    <div class="card">
-        <img src="img/lviv.jpg" alt="Lviv">
+    <div class="card" id="top">
+        <h2>Про місто</h2>
 
-        <p>
-            Львів — одне з найкрасивіших міст України, відоме своєю
-            старовинною архітектурою та атмосферою.
+        <p align="justify">
+            <font size="4" color="#1e4f73">
+                <b>Львів</b> — культурна столиця України, відома своєю архітектурою,
+                вузькими вуличками та атмосферою старовини.
+            </font>
+        </p>
+
+        <p align="justify">
+            Під час екскурсії туристи знайомляться з <i>площею Ринок</i>,
+            старовинними храмами та кав’ярнями.
         </p>
 
         <p>
-            Основні туристичні місця:
+            <a href="#places">Перейти до визначних місць</a> |
+            <a href="index.html#cities">До списку міст</a> |
+            <a href="https://uk.wikipedia.org/wiki/Львів" target="_blank">В інтернет</a>
         </p>
+    </div>
 
-        <ul>
+    <div class="card" id="places">
+        <h2>Популярні місця</h2>
+
+        <ul type="circle">
             <li>Площа Ринок</li>
-            <li>Львівська опера</li>
+            <li>Оперний театр</li>
             <li>Високий замок</li>
-            <li>Старе місто (ЮНЕСКО)</li>
         </ul>
 
-        <p>
-            Місто славиться кавою, шоколадом та фестивалями.
-        </p>
+        <a href="img/lviv.jpg" target="_blank">
+            <img src="img/lviv.jpg" width="150">
+        </a>
+
+        <p><a href="#top">На початок</a></p>
+    </div>
+
+    <div class="card">
+        <h2>Таблиця екскурсій Львовом</h2>
+
+        <table border="1" cellpadding="15" cellspacing="10" width="100%">
+            <colgroup>
+                <col span="2" style="background-color:#f2f9ff">
+                <col>
+            </colgroup>
+
+            <tr align="center">
+                <th colspan="3" bgcolor="#2c6e91">Розклад турів</th>
+            </tr>
+
+            <tr>
+                <td rowspan="2">Львів</td>
+                <td>Пішохідна</td>
+                <td align="right">10:00</td>
+            </tr>
+
+            <tr>
+                <td>Автобусна</td>
+                <td align="right">16:00</td>
+            </tr>
+
+            <tr align="center">
+                <td>Центр</td>
+                <td colspan="2">Щодня</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>Офіційне джерело інформації про Львів</h2>
+        <iframe
+                src="https://uk.wikipedia.org/wiki/Львів"
+                width="100%"
+                height="400">
+        </iframe>
+
     </div>
 </main>
 
 <div class="footer">
-    Автор: Єлізарова Софія
+    <p>© 2026 Екскурсії Україною</p>
 </div>
 
 </body>
