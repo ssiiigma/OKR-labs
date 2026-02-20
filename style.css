@@ -59,51 +59,6 @@ img {
     margin: 15px 0;
 }
 
-/* === Контекстні селектори === */
-/* Заголовки всередині main */
-main h2 {
-    color: #ed4a19 !important;
-    text-align: left;
-}
-
-/* Абзаци всередині карточок */
-.card p {
-    font-size: 16px !important;
-    color: #2c6e91 !important;
-    line-height: 1.7 !important;
-}
-
-/* === Сусідні селектори === */
-/* Перший абзац після заголовка h2 */
-h2 + p {
-    margin-top: 5px;
-    font-style: italic;
-    color: #1e4f73;
-}
-
-/* Картинка після абзацу */
-p + img {
-    border: 2px solid #1e4f73 !important;
-    border-radius: 8px;
-}
-
-/* === Дочірні селектори === */
-/* Прямі дочірні li всередині ul */
-ul > li {
-    font-size: 16px;
-    color: #333;
-    padding: 5px 0;
-}
-
-/* Прямі дочірні th всередині таблиці */
-table > tr > th {
-    font-weight: bold;
-    background-color: #1e4f73;
-    color: white;
-    text-align: center;
-}
-
-/* === Списки === */
 ul {
     list-style-type: disc;
     padding-left: 30px;
@@ -131,7 +86,6 @@ dl dd {
     font-style: italic;
 }
 
-/* === Таблиці === */
 table {
     border-collapse: collapse !important;
     width: 100%;
@@ -163,26 +117,29 @@ iframe {
     margin: 15px 0;
 }
 
-/* === Блочні елементи === */
-/* Додаткові блочні елементи для виділення секцій */
-section {
-    display: block;
-    margin-bottom: 25px;
-    padding: 15px;
-    background-color: #f0f8ff;
-    border-radius: 10px;
-}
-
-/* Всі div всередині main робимо блочними */
-main > div {
-    display: block;
-    margin-bottom: 20px;
-}
-
 .footer {
     background-color: #1e4f73 !important;
     color: white !important;
     text-align: center;
     padding: 15px;
     margin-top: 30px;
+}
+
+/* Унікальний заголовок головної сторінки */
+#main-title {
+    font-size: 32px;
+    color: #003366 !important;
+    text-align: center;
+}
+
+/* Спеціальний блок опису */
+#intro-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Унікальний футер */
+#page-footer {
+    background-color: #163d5a !important;
 }
