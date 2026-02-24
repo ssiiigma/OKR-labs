@@ -1,56 +1,115 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #e6f2ff;
+    color: #2c3e50;
     line-height: 1.6;
     margin: 0;
-    color: #333;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
 }
 
 h1, h2 {
-    font-family: 'Verdana', sans-serif;
-    color: #1e4f73;
+    font-family: Verdana, sans-serif;
     text-align: center;
-    line-height: 1.2;
+    color: #1e4f73;
+    margin-bottom: 15px;
 }
 
 h2 {
     font-size: 1.5em;
 }
 
+/* Псевдоелементи */
+h2::before {
+    content: "★ ";
+    color: #093595;
+}
+
+h2::after {
+    content: " ★";
+    color: #d3b60d;
+}
+
+/* Контекстний селектор */
+main h2 {
+    text-align: left;
+}
+
+/* ПОСИЛАННЯ (ПСЕВДОКЛАСИ) */
 a {
-    color: #1e4f73;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
+}
+
+a:link {
+    color: #1e4f73;
+}
+
+a:visited {
+    color: #5a7d99;
 }
 
 a:hover {
-    text-decoration: underline;
     color: #ff6600;
+    text-decoration: underline;
 }
 
+a:active {
+    color: red;
+}
+
+/* НАВІГАЦІЯ */
 nav {
-    background-color: #2c6e91;
-    padding: 10px;
+    background-color: #1e4f73;
+    padding: 12px;
     text-align: center;
 }
 
 nav a {
-    color: white;
+    color: #ffffff;
     margin: 0 15px;
 }
 
-main {
-    padding: 30px;
-    max-width: 900px;
-    margin: auto;
+nav a:visited {
+    color: #ffffff;
+}
+
+nav a:hover {
+    color: #ffcc66;
+}
+
+nav a:active {
+    color: #ffd700;
 }
 
 .card {
-    background: white;
+    background-color: #ffffff;
     padding: 20px;
     margin-bottom: 25px;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* first-child */
+.card p:first-child {
+    font-weight: bold;
+    color: #003366;
+}
+
+/* Контекстний селектор */
+.card p {
+    color: #14587c;
+    font-size: 16px;
+}
+
+/* Сусідній селектор */
+h2 + p {
+    font-style: italic;
+    margin-top: 5px;
 }
 
 img {
@@ -59,66 +118,33 @@ img {
     margin: 15px 0;
 }
 
-/* === Контекстні селектори === */
-/* Заголовки всередині main */
-main h2 {
-    color: #ed4a19;
-    text-align: left;
-}
-
-/* Абзаци всередині карточок */
-.card p {
-    font-size: 16px;
-    color: #2c6e91;
-    line-height: 1.7;
-}
-
-/* === Сусідні селектори === */
-/* Перший абзац після заголовка h2 */
-h2 + p {
-    margin-top: 5px;
-    font-style: italic;
-    color: #1e4f73;
-}
-
-/* Картинка після абзацу */
+/* Сусідній селектор */
 p + img {
     border: 2px solid #1e4f73;
-    border-radius: 8px;
 }
 
-/* === Дочірні селектори === */
-/* Прямі дочірні li всередині ul */
-ul > li {
-    font-size: 16px;
-    color: #333;
-    padding: 5px 0;
-}
-
-/* Прямі дочірні th всередині таблиці */
-table > tr > th {
-    font-weight: bold;
-    background-color: #1e4f73;
-    color: white;
-    text-align: center;
-}
-
-/* === Списки === */
-ul {
-    list-style-type: disc;
+ul, ol {
     padding-left: 30px;
     margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: disc;
 }
 
 ol {
     list-style-type: decimal;
-    padding-left: 30px;
-    margin-bottom: 15px;
 }
 
-dl {
-    padding-left: 20px;
-    margin-bottom: 15px;
+/* Дочірній селектор */
+ul > li {
+    padding: 5px 0;
+}
+
+/* first-child */
+ul li:first-child {
+    color: #1e4f73;
+    font-weight: bold;
 }
 
 dl dt {
@@ -131,12 +157,10 @@ dl dd {
     font-style: italic;
 }
 
-/* === Таблиці === */
 table {
-    border-collapse: collapse;
     width: 100%;
-    margin-bottom: 25px;
-    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
 
 th, td {
@@ -145,44 +169,86 @@ th, td {
     text-align: center;
 }
 
-th {
+/* Заголовок таблиці */
+table thead th {
     background-color: #1e4f73;
-    color: white;
-    font-size: 1em;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+table tr:first-child th {
+    background-color: #1e4f73;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 caption {
     font-weight: bold;
-    font-size: 1.2em;
     margin-bottom: 10px;
 }
 
-iframe {
-    border: 2px solid #1e4f73;
-    border-radius: 8px;
-    margin: 15px 0;
-}
-
-/* === Блочні елементи === */
-/* Додаткові блочні елементи для виділення секцій */
-section {
-    display: block;
+/* FLOAT + POSITION */
+.info-section {
+    background-color: #f0f6ff;
+    padding: 20px;
+    border-radius: 12px;
     margin-bottom: 25px;
-    padding: 15px;
-    background-color: #f0f8ff;
-    border-radius: 10px;
 }
 
-/* Всі div всередині main робимо блочними */
-main > div {
+/* clearfix */
+.info-section::after {
+    content: "";
     display: block;
-    margin-bottom: 20px;
+    clear: both;
+}
+
+/* FLOAT блок (зліва) */
+.float-block {
+    float: left;
+    width: 45%;
+    background-color: #dbe9f6;
+    padding: 15px;
+    margin-right: 5%;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* POSITION блок (справа) */
+.position-block {
+    float: right;
+    width: 45%;
+    position: relative;
+    background-color: #ffffff;
+    padding: 20px;
+    border-left: 5px solid #1e4f73;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* псевдоелемент */
+.position-block::before {
+    content: "ℹ ";
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    color: #1e4f73;
+    font-weight: bold;
+}
+
+/* span */
+.highlight {
+    font-weight: bold;
+    color: #1e4f73;
 }
 
 .footer {
     background-color: #1e4f73;
-    color: white;
+    color: #ffffff;
     text-align: center;
     padding: 15px;
-    margin-top: 30px;
+    margin-top: 40px;
+}
+
+.footer::before {
+    content: "© ";
 }
