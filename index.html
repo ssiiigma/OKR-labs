@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title id="main-title">Екскурсії Україною | Головна</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body bgcolor="#e6f2ff" link="#1e4f73" vlink="#2c6e91" alink="#ff6600">
@@ -20,6 +21,10 @@
 </nav>
 
 <main>
+    <script>
+        alert("Цей сайт присвячений подорожам історичними містами України");
+    </script>
+
     <section class="card info-section">
 
         <div class="info-block">
@@ -50,6 +55,38 @@
             </p>
         </div>
 </section>
+
+    <section class="card js-section">
+
+        <h2>Інтерактивний блок</h2>
+
+        <div class="button-group">
+
+            <button onclick="startInternalScripts()">Привітання</button>
+
+            <button onclick="dialogWithUser()">Діалог з користувачем</button>
+
+            <button onclick="showDeveloper()">Інформація про розробника</button>
+
+            <button onclick="compareStrings()">Порівняти рядки</button>
+
+            <button onclick="changeBackground()">Фон на 30 секунд</button>
+
+            <button onclick="redirectToLviv()">Перейти на сторінку Львова</button>
+
+            <button onclick="writeExample()">document.write()</button>
+
+            <button onclick="domDemo()">Демонстрація DOM</button>
+
+        </div>
+
+        <div id="dom-area">
+
+            <p id="demo-text">Цей текст буде змінюватись DOM-методами.</p>
+
+        </div>
+
+    </section>
 
     <div class="card">
         <h2 id="cities">Популярні міста</h2>
