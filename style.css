@@ -1,3 +1,6 @@
+/* =============================================
+   BASE
+============================================= */
 body {
     font-family: Arial, sans-serif;
     background-color: #e6f2ff;
@@ -12,7 +15,10 @@ main {
     padding: 20px;
 }
 
-h1, h2 {
+/* =============================================
+   HEADINGS
+============================================= */
+h1 {
     font-family: Verdana, sans-serif;
     text-align: center;
     color: #1e4f73;
@@ -20,49 +26,34 @@ h1, h2 {
 }
 
 h2 {
-    font-size: 1.5em;
-}
-
-/* Псевдоелементи */
-h2::before {
-    content: "★ ";
-    color: #093595;
-}
-
-h2::after {
-    content: " ★";
-    color: #d3b60d;
-}
-
-/* Контекстний селектор */
-main h2 {
-    text-align: left;
-}
-
-/* ПОСИЛАННЯ (ПСЕВДОКЛАСИ) */
-a {
-    font-weight: bold;
-    text-decoration: none;
-}
-
-a:link {
+    font-family: Verdana, sans-serif;
     color: #1e4f73;
+    margin-bottom: 15px;
+    font-size: 1.4em;
 }
 
-a:visited {
-    color: #5a7d99;
+h2::before { content: "★ "; color: #093595; }
+h2::after  { content: " ★"; color: #d3b60d; }
+
+main h2 { text-align: left; }
+
+h3 {
+    color: #1e4f73;
+    margin-top: 16px;
 }
 
-a:hover {
-    color: #ff6600;
-    text-decoration: underline;
-}
+/* =============================================
+   LINKS
+============================================= */
+a { font-weight: bold; text-decoration: none; }
+a:link    { color: #1e4f73; }
+a:visited { color: #5a7d99; }
+a:hover   { color: #ff6600; text-decoration: underline; }
+a:active  { color: red; }
 
-a:active {
-    color: red;
-}
-
-/* НАВІГАЦІЯ */
+/* =============================================
+   NAVIGATION
+============================================= */
 nav {
     background-color: #1e4f73;
     padding: 12px;
@@ -71,21 +62,41 @@ nav {
 
 nav a {
     color: #ffffff;
-    margin: 0 15px;
+    margin: 0 10px;
+    padding: 8px 14px;
+    background-color: #2c6e91;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-nav a:visited {
+nav a:visited { color: #ffffff; }
+nav a:hover   { background-color: #ff6600; color: #ffffff; }
+nav a:active  { background-color: #ffd700; color: #1e4f73; }
+
+/* =============================================
+   HEADER / FOOTER
+============================================= */
+header {
+    background-color: #1e4f73;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 { color: #ffffff; margin: 0; }
+
+.footer {
+    background-color: #1e4f73;
     color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
 }
 
-nav a:hover {
-    color: #ffcc66;
-}
-
-nav a:active {
-    color: #ffd700;
-}
-
+/* =============================================
+   CARD
+============================================= */
 .card {
     background-color: #ffffff;
     padding: 20px;
@@ -94,69 +105,72 @@ nav a:active {
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* first-child */
-.card p:first-child {
-    font-weight: bold;
-    color: #003366;
+.card p { color: #14587c; font-size: 16px; }
+.card p:first-child { font-weight: bold; color: #003366; }
+
+/* =============================================
+   INFO-SECTION (float + position)
+============================================= */
+.info-section {
+    background-color: #f0f6ff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
 }
 
-/* Контекстний селектор */
-.card p {
-    color: #14587c;
-    font-size: 16px;
+.info-section::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
-/* Сусідній селектор */
-h2 + p {
-    font-style: italic;
-    margin-top: 5px;
-}
-
-img {
-    width: 100%;
+.float-block {
+    float: left;
+    width: 45%;
+    background-color: #dbe9f6;
+    padding: 15px;
+    margin-right: 5%;
     border-radius: 10px;
-    margin: 15px 0;
+    box-sizing: border-box;
 }
 
-/* Сусідній селектор */
-p + img {
-    border: 2px solid #1e4f73;
+.position-block {
+    float: right;
+    width: 45%;
+    position: relative;
+    background-color: #ffffff;
+    padding: 20px;
+    border-left: 5px solid #1e4f73;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 
-ul, ol {
-    padding-left: 30px;
-    margin-bottom: 15px;
-}
-
-ul {
-    list-style-type: disc;
-}
-
-ol {
-    list-style-type: decimal;
-}
-
-/* Дочірній селектор */
-ul > li {
-    padding: 5px 0;
-}
-
-/* first-child */
-ul li:first-child {
+.position-block::before {
+    content: "ℹ ";
+    position: absolute;
+    top: 15px;
+    left: 10px;
     color: #1e4f73;
     font-weight: bold;
 }
 
-dl dt {
-    font-weight: bold;
-    color: #1e4f73;
-}
+.highlight { font-weight: bold; color: #1e4f73; }
 
-dl dd {
-    margin-left: 15px;
-    font-style: italic;
-}
+/* =============================================
+   LISTS
+============================================= */
+ul, ol { padding-left: 30px; margin-bottom: 15px; }
+ul { list-style-type: disc; }
+ol { list-style-type: decimal; }
+ul > li { padding: 5px 0; }
+ul li:first-child { color: #1e4f73; font-weight: bold; }
 
+dl dt { font-weight: bold; color: #1e4f73; }
+dl dd { margin-left: 15px; font-style: italic; }
+
+/* =============================================
+   TABLE
+============================================= */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -169,14 +183,7 @@ th, td {
     text-align: center;
 }
 
-/* Заголовок таблиці */
-table thead th {
-    background-color: #1e4f73;
-    color: #ffffff;
-    font-weight: bold;
-}
-
-table tr:first-child th {
+thead th {
     background-color: #1e4f73;
     color: #ffffff;
     font-weight: bold;
@@ -187,115 +194,249 @@ caption {
     margin-bottom: 10px;
 }
 
-/* FLOAT + POSITION */
-.info-section {
-    background-color: #f0f6ff;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 25px;
+img {
+    border-radius: 8px;
 }
 
-/* clearfix */
-.info-section::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-/* FLOAT блок (зліва) */
-.float-block {
-    float: left;
-    width: 45%;
-    background-color: #dbe9f6;
-    padding: 15px;
-    margin-right: 5%;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-
-/* POSITION блок (справа) */
-.position-block {
-    float: right;
-    width: 45%;
-    position: relative;
-    background-color: #ffffff;
-    padding: 20px;
-    border-left: 5px solid #1e4f73;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-
-/* псевдоелемент */
-.position-block::before {
-    content: "ℹ ";
-    position: absolute;
-    top: 15px;
-    left: 10px;
-    color: #1e4f73;
-    font-weight: bold;
-}
-
-/* span */
-.highlight {
-    font-weight: bold;
-    color: #1e4f73;
-}
-
-.footer {
-    background-color: #1e4f73;
-    color: #ffffff;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-}
-
-.footer::before {
-    content: "© ";
-}
-
-/* ===== JS секція ===== */
-
-.js-section {
-    text-align: center;
-}
-
-/* контейнер кнопок */
-.button-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-/* кнопки */
-.button-group button {
+/* =============================================
+   BUTTONS (general)
+============================================= */
+button {
     background-color: #2c6e91;
     color: white;
     border: none;
-    padding: 10px 16px;
+    padding: 10px 18px;
+    margin: 6px 4px;
     border-radius: 8px;
     font-size: 14px;
     font-family: Arial, sans-serif;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-/* hover */
-.button-group button:hover {
+button:hover {
     background-color: #1e4f73;
     transform: translateY(-2px);
 }
 
-/* active */
-.button-group button:active {
-    background-color: #ff6600;
+button:active { background-color: #ff6600; }
+
+.btn-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #2c6e91;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-/* зона DOM */
-#dom-area {
-    margin-top: 25px;
-    padding: 15px;
-    background-color: #f0f6ff;
+.btn-link:hover { background-color: #ff6600; color: #fff; }
+
+/* =============================================
+   JS SECTION — shared helpers
+============================================= */
+.js-section { position: relative; }
+
+.js-desc {
+    color: #4a6a80 !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #e8f0ff;
+    color: #1e4f73;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid #b0c8e0;
+}
+
+code {
+    background-color: #eef4ff;
+    color: #1e4f73;
+    font-family: monospace;
+    font-size: 13px;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
+.section-label {
+    color: #1e4f73 !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    margin: 16px 0 6px;
+}
+
+/* result / log boxes */
+.result-box {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background-color: #f0f7ff;
+    border-left: 4px solid #2c6e91;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #1e3a52;
+    transition: opacity 0.3s;
+}
+
+.result-box.hidden { display: none; }
+
+.log-box {
+    margin-top: 14px;
+    background-color: #1a1a2e;
+    color: #a8d8ff;
+    font-family: monospace;
+    font-size: 13px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    min-height: 60px;
+    max-height: 160px;
+    overflow-y: auto;
+    line-height: 1.7;
+}
+
+.status-line {
+    font-size: 13px;
+    color: #2a7a2a;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.status-line.inactive { color: #b04040; }
+
+.info-panel {
+    margin-top: 14px;
+    padding: 14px 18px;
+    background-color: #fff8e1;
+    border-left: 4px solid #f0b429;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #3a3000;
+    line-height: 1.7;
+}
+
+.info-panel.hidden { display: none; }
+
+/* =============================================
+   1. TOUR CARD (атрибут onclick)
+============================================= */
+.tour-card {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 130px;
+    padding: 20px 14px;
+    background-color: #e8f4ff;
+    border: 2px solid #2c6e91;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+    user-select: none;
+}
+
+.tour-card:hover {
+    background-color: #cce4ff;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(30,79,115,0.18);
+}
+
+.tour-card:active { background-color: #ffe0cc; border-color: #ff6600; }
+
+.tour-card__icon { font-size: 2.4em; margin-bottom: 6px; }
+.tour-card__name { font-weight: bold; color: #1e4f73; font-size: 1.1em; }
+.tour-card__sub  { font-size: 11px; color: #6a8fa8; margin-top: 4px; }
+
+/* =============================================
+   2. CITY BADGES (властивість)
+============================================= */
+.badge-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+}
+
+.city-badge {
+    padding: 12px 22px;
+    background-color: #dbeeff;
+    border: 2px solid #2c6e91;
+    border-radius: 30px;
+    font-weight: bold;
+    color: #1e4f73;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.15s;
+    user-select: none;
+}
+
+.city-badge:hover { background-color: #b3d9ff; transform: scale(1.05); }
+.city-badge.active { background-color: #1e4f73; color: #fff; }
+
+.tooltip-box {
+    margin-top: 10px;
+    padding: 10px 16px;
+    background-color: #fff3cd;
+    border-left: 4px solid #f0b429;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #5c4000;
+}
+
+.tooltip-box.hidden { display: none; }
+
+/* =============================================
+   5. TOUR LIST (event.target)
+============================================= */
+.tour-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px;
+}
+
+.tour-list li {
+    padding: 13px 18px;
+    margin-bottom: 8px;
+    background-color: #f0f7ff;
+    border: 2px solid transparent;
     border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: normal !important;
+    color: #1e3a52 !important;
+    transition: background-color 0.2s, border-color 0.2s, transform 0.12s;
+}
+
+.tour-list li:hover { background-color: #dbeeff; transform: translateX(4px); }
+
+.tour-list li.selected {
+    background-color: #cce5ff;
+    border-color: #2c6e91;
+    font-weight: bold !important;
+}
+
+.tour-list li:first-child {
+    color: #1e3a52 !important;
+    font-weight: normal !important;
+}
+
+/* =============================================
+   6-7. MENU (делегування + behavior)
+============================================= */
+.btn-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-menu button {
+    font-size: 14px;
+    padding: 10px 18px;
 }
