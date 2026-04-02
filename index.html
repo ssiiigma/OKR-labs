@@ -39,7 +39,7 @@
                     офіційній сторінці Вікіпедії
                 </a>.
             </p>
-            <a class="btn-link" href="#cities" style="color: #dbeeff">Перейти до списку міст</a>
+            <a class="btn-link" href="#cities">Перейти до списку міст</a>
         </div>
 
         <div class="position-block">
@@ -148,24 +148,9 @@
          JS-СЕКЦІЯ: події, обробники, делегування
     ====================================================== -->
 
-    <!-- 1. Подія через атрибут onclick -->
-    <div class="card js-section" id="js-attr">
-        <h2>Картка туру</h2>
-        <p class="js-desc">
-            Натисніть на картку, щоб дізнатись деталі екскурсії по Києву.<br>
-        </p>
-        <div class="tour-card" onclick="showTourInfo(this)">
-            <div class="tour-card__icon">🏛️</div>
-            <div class="tour-card__name">Київ</div>
-            <div class="tour-card__sub">Клікніть для деталей</div>
-        </div>
-        <div id="attr-result" class="result-box hidden"></div>
-    </div>
-
-
-    <!-- 2. Подія через властивість + mouseenter/mouseleave -->
+    <!-- Подія через властивість + mouseenter/mouseleave -->
     <div class="card js-section" id="js-prop">
-        <h2>Бейдж туру</h2>
+        <h2>Бейдж туру </h2>
         <p class="js-desc">
             Наведіть курсор на бейдж міста, щоб побачити швидкий опис.<br>
         </p>
@@ -176,27 +161,6 @@
         </div>
         <div id="badge-tooltip" class="tooltip-box hidden"></div>
     </div>
-
-
-    <!-- 3. addEventListener — два обробники на одну подію -->
-    <div class="card js-section" id="js-multi">
-        <h2>Додати тур</h2>
-        <button id="addTourBtn">🗺️ Додати тур</button>
-        <div id="multi-log" class="log-box"></div>
-    </div>
-
-
-    <!-- 4. Обробник-об'єкт + handleEvent + event.currentTarget + removeEventListener -->
-    <!-- Кнопка «Запитати гіда» використовує об'єкт як обробник через handleEvent.
-            Обробник повідомляє, на якому елементі спрацював (event.currentTarget).
-            Через 10 секунд гід «йде» — обробник видаляється через removeEventListener -->
-    <div class="card js-section" id="js-object">
-        <h2>Гід-екскурсовод</h2>
-        <button id="guideBtn">🧭 Запитати гіда</button>
-        <div id="guide-status" class="status-line">Гід на місці. Обробник активний.</div>
-        <div id="guide-result" class="result-box hidden"></div>
-    </div>
-
 
     <!-- 5. Список з підсвічуванням + event.target -->
     <div class="card js-section" id="js-list">
@@ -218,7 +182,7 @@
         <h2>Панель керування турами</h2>
 
         <!-- Меню з data-action -->
-        <p class="section-label">🗺️ Вибір міста:</p>
+        <p class="section-label">🗺️ Вибір міста</p>
         <div id="menu" class="btn-menu">
             <button data-action="kyiv">🏙️ Київ</button>
             <button data-action="lviv">🦁 Львів</button>
@@ -227,7 +191,7 @@
         </div>
 
         <!-- Кнопки з data-behavior (Behavior pattern) -->
-        <p class="section-label">⚙️ Дії:</p>
+        <p class="section-label">⚙️ Дії</p>
         <div class="btn-menu">
             <button data-behavior="toggle-info">ℹ️ Про Україну</button>
             <button data-behavior="reset-list">🔄 Скинути список</button>
@@ -242,24 +206,101 @@
         </div>
 
         <div id="contacts-text" class="info-panel hidden">
-            📧 <strong>Email:</strong> tours@ukraine.ua<br>
-            📞 <strong>Телефон:</strong> +38 (012) 123-45-67<br>
+            📧 <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="65110a10171625100e17040c0b004b1004">[email&#160;protected]</a><br>
+            📞 <strong>Телефон:</strong> +38 (044) 123-45-67<br>
             🕐 <strong>Графік:</strong> Пн–Пт, 09:00–18:00
         </div>
     </div>
 
 
-    <!-- Вікіпедія -->
-    <div class="card">
-        <h2>Офіційне джерело інформації про Україну</h2>
-        <iframe
-                src="https://uk.wikipedia.org/wiki/%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B0"
-                width="100%"
-                height="400"
-                title="Вікіпедія — Україна">
-        </iframe>
+    <!-- ======================================================
+         ЛАБ 8: ПОДІЇ МИШІ
+    ====================================================== -->
+
+    <!-- 8а. mouseover / mouseout + event.target + event.relatedTarget -->
+    <div class="card js-section" id="js-mouse">
+        <h2>Визначні пам'ятки</h2>
+        <p class="js-desc">
+            Наведіть курсор на картку пам'ятки — вона змінить стиль.<br>
+        </p>
+
+        <div id="landmarks-grid" class="landmarks-grid">
+
+            <div class="landmark-card" data-city="Київ" data-name="Києво-Печерська лавра"
+                 data-desc="Монастирський комплекс XI ст., об'єкт ЮНЕСКО. Печери, собори, музеї.">
+                <div class="landmark-card__emoji">⛪</div>
+                <div class="landmark-card__title">Києво-Печерська лавра</div>
+                <div class="landmark-card__city">Київ</div>
+            </div>
+
+            <div class="landmark-card" data-city="Львів" data-name="Площа Ринок"
+                 data-desc="Серце старого Львова. Ратуша XIV ст., кам'яниці, фонтани. Об'єкт ЮНЕСКО.">
+                <div class="landmark-card__emoji">🏛️</div>
+                <div class="landmark-card__title">Площа Ринок</div>
+                <div class="landmark-card__city">Львів</div>
+            </div>
+
+            <div class="landmark-card" data-city="Одеса" data-name="Потьомкінські сходи"
+                 data-desc="Монументальні сходи 1841 р., символ Одеси. 192 сходинки від порту до міста.">
+                <div class="landmark-card__emoji">🏗️</div>
+                <div class="landmark-card__title">Потьомкінські сходи</div>
+                <div class="landmark-card__city">Одеса</div>
+            </div>
+
+            <div class="landmark-card" data-city="Кам'янець-Подільський" data-name="Кам'янець-Подільська фортеця"
+                 data-desc="Фортеця XIV–XVIII ст. на скелястому острові. Одна з найкращих середньовічних фортець Європи.">
+                <div class="landmark-card__emoji">🏰</div>
+                <div class="landmark-card__title">Фортеця XIV ст.</div>
+                <div class="landmark-card__city">Кам'янець-Подільський</div>
+            </div>
+
+        </div>
+
+        <div id="mouse-log" class="mouse-log">
+            <span class="mouse-log__label">Наведіть курсор на пам'ятку...</span>
+        </div>
     </div>
 
+
+    <!-- 8б. Перетягування — mousedown, mousemove, mouseup -->
+    <div class="card js-section" id="js-drag">
+        <h2>Планувальник маршруту</h2>
+        <p class="js-desc">
+            Перетягніть картку туру зі списку доступних у свій маршрут.<br>
+        </p>
+
+        <div class="planner">
+
+            <div class="planner__col" id="available-tours">
+                <div class="planner__col-title">🗂️ Доступні тури</div>
+
+                <div class="draggable-tour" data-tour="kyiv">
+                    <span class="draggable-tour__icon">🏙️</span>
+                    <span class="draggable-tour__name">Київ</span>
+                </div>
+                <div class="draggable-tour" data-tour="lviv">
+                    <span class="draggable-tour__icon">🦁</span>
+                    <span class="draggable-tour__name">Львів</span>
+                </div>
+                <div class="draggable-tour" data-tour="odesa">
+                    <span class="draggable-tour__icon">⚓</span>
+                    <span class="draggable-tour__name">Одеса</span>
+                </div>
+                <div class="draggable-tour" data-tour="kamianets">
+                    <span class="draggable-tour__icon">🏰</span>
+                    <span class="draggable-tour__name">Кам'янець</span>
+                </div>
+            </div>
+
+            <div class="planner__col planner__col--drop" id="my-route">
+                <div class="planner__col-title">📍 Мій маршрут</div>
+                <div class="planner__drop-hint">Перетягніть тур сюди</div>
+            </div>
+
+        </div>
+
+        <div id="drag-log" class="log-box" style="margin-top:14px; min-height:48px;"></div>
+    </div>
 </main>
 
 <div class="footer" id="page-footer">

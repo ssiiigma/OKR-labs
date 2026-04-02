@@ -427,6 +427,182 @@ code {
 }
 
 /* =============================================
+   8а. LANDMARKS GRID (mouseover/mouseout)
+============================================= */
+.landmarks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin: 16px 0 12px;
+}
+
+.landmark-card {
+    background-color: #f0f7ff;
+    border: 2px solid #b8d6ee;
+    border-radius: 14px;
+    padding: 20px 14px;
+    text-align: center;
+    cursor: default;
+    /* Плавний перехід для всіх властивостей, що змінюються при hover */
+    transition: background-color 0.25s, border-color 0.25s,
+    transform 0.2s, box-shadow 0.25s;
+    user-select: none;
+}
+
+/* Стиль застосовується через JS — клас .hovered */
+.landmark-card.hovered {
+    background-color: #1e4f73;
+    border-color: #ff6600;
+    color: #ffffff;
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 10px 28px rgba(30,79,115,0.28);
+}
+
+.landmark-card__emoji {
+    font-size: 2.6em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.landmark-card__title {
+    font-weight: bold;
+    font-size: 14px;
+    color: inherit;
+    margin-bottom: 4px;
+}
+
+.landmark-card__city {
+    font-size: 12px;
+    color: #6a8fa8;
+    font-style: italic;
+}
+
+.landmark-card.hovered .landmark-card__city {
+    color: #a8d8ff;
+}
+
+/* Лог подій mouseover/mouseout */
+.mouse-log {
+    margin-top: 10px;
+    padding: 10px 16px;
+    background-color: #eef4ff;
+    border-left: 4px solid #2c6e91;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #1e3a52;
+    font-family: monospace;
+    min-height: 38px;
+    line-height: 1.8;
+}
+
+.mouse-log__label { color: #7a9ab8; }
+.mouse-log__event { color: #1e4f73; font-weight: bold; }
+.mouse-log__related { color: #888; }
+
+/* =============================================
+   8б. DRAG PLANNER (mousedown/mousemove/mouseup)
+============================================= */
+.planner {
+    display: flex;
+    gap: 20px;
+    margin: 16px 0 0;
+    flex-wrap: wrap;
+}
+
+.planner__col {
+    flex: 1;
+    min-width: 180px;
+    background-color: #f0f7ff;
+    border: 2px solid #b8d6ee;
+    border-radius: 14px;
+    padding: 16px;
+    min-height: 220px;
+}
+
+.planner__col--drop {
+    border: 2px dashed #2c6e91;
+    background-color: #e8f4ff;
+    /* підсвічування зони скидання коли над нею тягнуть */
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.planner__col--drop.drop-active {
+    background-color: #cce5ff;
+    border-color: #ff6600;
+}
+
+.planner__col-title {
+    font-weight: bold;
+    color: #1e4f73;
+    font-size: 15px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.planner__drop-hint {
+    color: #7aa8c8;
+    font-size: 13px;
+    text-align: center;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Картки, які перетягуємо */
+.draggable-tour {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background-color: #ffffff;
+    border: 2px solid #2c6e91;
+    border-radius: 10px;
+    cursor: grab;
+    font-size: 14px;
+    color: #1e3a52;
+    font-weight: bold;
+    user-select: none;
+    transition: background-color 0.15s, box-shadow 0.15s, opacity 0.15s;
+}
+
+.draggable-tour:hover {
+    background-color: #dbeeff;
+    box-shadow: 0 3px 10px rgba(30,79,115,0.15);
+}
+
+/* Стиль під час перетягування (додається через JS) */
+.draggable-tour.dragging {
+    opacity: 0.4;
+    cursor: grabbing;
+}
+
+/* Клон, що летить за курсором */
+.drag-clone {
+    position: fixed;
+    pointer-events: none;   /* клон не перехоплює події миші */
+    z-index: 9999;
+    opacity: 0.88;
+    box-shadow: 0 8px 24px rgba(30,79,115,0.35);
+    border-radius: 10px;
+    cursor: grabbing;
+    background-color: #fff;
+    border: 2px solid #ff6600;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1e3a52;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Картки вже у маршруті — трохи інший стиль */
+.draggable-tour.in-route {
+    border-color: #ff6600;
+    background-color: #fff5ee;
+}
+
+/* =============================================
    6-7. MENU (делегування + behavior)
 ============================================= */
 .btn-menu {
